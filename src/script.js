@@ -27,13 +27,11 @@ const textureLoader = new THREE.TextureLoader();
 
 // Door
 const doorColorTexture = textureLoader.load("/textures/door/color.jpg");
-const doorAlphaTexture = textureLoader.load("/textures/door/alpha.jpg");
 const doorAmbientOcclusionTexture = textureLoader.load(
   "/textures/door/ambientOcclusion.jpg"
 );
 const doorHeightTexture = textureLoader.load("/textures/door/height.jpg");
 const doorNormalTexture = textureLoader.load("/textures/door/normal.jpg");
-const doorMetalnessTexture = textureLoader.load("/textures/door/metalness.jpg");
 const doorRoughnessTexture = textureLoader.load("/textures/door/roughness.jpg");
 
 // Bricks
@@ -149,16 +147,14 @@ house.add(roof);
 
 // Door
 const door = new THREE.Mesh(
-  new THREE.PlaneGeometry(2.2, 2.2, 100, 100),
+  new THREE.PlaneGeometry(1.5, 2.2, 100, 100),
   new THREE.MeshStandardMaterial({
     map: doorColorTexture,
     transparent: true,
-    alphaMap: doorAlphaTexture,
     aoMap: doorAmbientOcclusionTexture,
     displacementMap: doorHeightTexture,
     displacementScale: 0.1,
     normalMap: doorNormalTexture,
-    metalnessMap: doorMetalnessTexture,
     roughnessMap: doorRoughnessTexture,
   })
 );
@@ -268,14 +264,14 @@ doorLight.position.set(0, 2.2, 2.7);
 house.add(doorLight);
 
 // Ghosts
-// const ghost1 = new THREE.PointLight("#ff00ff", 2, 3);
-// scene.add(ghost1);
+const ghost1 = new THREE.PointLight("#808080", 2, 3);
+scene.add(ghost1);
 
-// const ghost2 = new THREE.PointLight("#00ffff", 2, 3);
-// scene.add(ghost2);
+const ghost2 = new THREE.PointLight("#808080", 2, 3);
+scene.add(ghost2);
 
-// const ghost3 = new THREE.PointLight("#ffff00", 2, 3);
-// scene.add(ghost3);
+const ghost3 = new THREE.PointLight("#808080", 2, 3);
+scene.add(ghost3);
 
 /**
  * Sizes
@@ -334,9 +330,9 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
 moonLight.castShadow = true;
 doorLight.castShadow = true;
-// ghost1.castShadow = true;
-// ghost2.castShadow = true;
-// ghost3.castShadow = true;
+ghost1.castShadow = true;
+ghost2.castShadow = true;
+ghost3.castShadow = true;
 
 walls.castShadow = true;
 bush1.castShadow = true;
@@ -350,17 +346,17 @@ doorLight.shadow.mapSize.width = 256;
 doorLight.shadow.mapSize.height = 256;
 doorLight.shadow.camera.far = 7;
 
-// ghost1.shadow.mapSize.width = 256;
-// ghost1.shadow.mapSize.height = 256;
-// ghost1.shadow.camera.far = 7;
+ghost1.shadow.mapSize.width = 256;
+ghost1.shadow.mapSize.height = 256;
+ghost1.shadow.camera.far = 7;
 
-// ghost2.shadow.mapSize.width = 256;
-// ghost2.shadow.mapSize.height = 256;
-// ghost2.shadow.camera.far = 7;
+ghost2.shadow.mapSize.width = 256;
+ghost2.shadow.mapSize.height = 256;
+ghost2.shadow.camera.far = 7;
 
-// ghost3.shadow.mapSize.width = 256;
-// ghost3.shadow.mapSize.height = 256;
-// ghost3.shadow.camera.far = 7;
+ghost3.shadow.mapSize.width = 256;
+ghost3.shadow.mapSize.height = 256;
+ghost3.shadow.camera.far = 7;
 /**
  * Animate
  */
@@ -370,21 +366,21 @@ const tick = () => {
   const elapsedTime = clock.getElapsedTime();
 
   // Ghosts
-  // const ghost1Angle = elapsedTime * 0.5;
-  // ghost1.position.x = Math.cos(ghost1Angle) * 4;
-  // ghost1.position.z = Math.sin(ghost1Angle) * 4;
-  // ghost1.position.y = Math.sin(elapsedTime * 3);
+  const ghost1Angle = elapsedTime * 0.5;
+  ghost1.position.x = Math.cos(ghost1Angle) * 4;
+  ghost1.position.z = Math.sin(ghost1Angle) * 4;
+  ghost1.position.y = Math.sin(elapsedTime * 3);
 
-  // const ghost2Angle = -elapsedTime * 0.32;
-  // ghost2.position.x = Math.cos(ghost2Angle) * 5;
-  // ghost2.position.z = Math.sin(ghost2Angle) * 5;
-  // ghost2.position.y = Math.sin(elapsedTime * 4) + Math.sin(elapsedTime * 2.5);
+  const ghost2Angle = -elapsedTime * 0.32;
+  ghost2.position.x = Math.cos(ghost2Angle) * 5;
+  ghost2.position.z = Math.sin(ghost2Angle) * 5;
+  ghost2.position.y = Math.sin(elapsedTime * 4) + Math.sin(elapsedTime * 2.5);
 
-  // const ghost3Angle = -elapsedTime * 0.18;
-  // ghost3.position.x =
-  //   Math.cos(ghost3Angle) * (7 + Math.sin(elapsedTime * 0.32));
-  // ghost3.position.z = Math.sin(ghost3Angle) * (7 + Math.sin(elapsedTime * 0.5));
-  // ghost3.position.y = Math.sin(elapsedTime * 4) + Math.sin(elapsedTime * 2.5);
+  const ghost3Angle = -elapsedTime * 0.18;
+  ghost3.position.x =
+    Math.cos(ghost3Angle) * (7 + Math.sin(elapsedTime * 0.32));
+  ghost3.position.z = Math.sin(ghost3Angle) * (7 + Math.sin(elapsedTime * 0.5));
+  ghost3.position.y = Math.sin(elapsedTime * 4) + Math.sin(elapsedTime * 2.5);
 
   // Update controls
   controls.update();
