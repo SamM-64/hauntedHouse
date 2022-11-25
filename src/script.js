@@ -25,6 +25,7 @@ scene.fog = fog;
  */
 const textureLoader = new THREE.TextureLoader();
 
+// Door
 const doorColorTexture = textureLoader.load("/textures/door/color.jpg");
 const doorAlphaTexture = textureLoader.load("/textures/door/alpha.jpg");
 const doorAmbientOcclusionTexture = textureLoader.load(
@@ -35,6 +36,7 @@ const doorNormalTexture = textureLoader.load("/textures/door/normal.jpg");
 const doorMetalnessTexture = textureLoader.load("/textures/door/metalness.jpg");
 const doorRoughnessTexture = textureLoader.load("/textures/door/roughness.jpg");
 
+// Bricks
 const bricksColorTexture = textureLoader.load("/textures/bricks/color.jpg");
 const bricksAmbientOcclusionTexture = textureLoader.load(
   "/textures/bricks/ambientOcclusion.jpg"
@@ -45,6 +47,31 @@ const bricksRoughnessTexture = textureLoader.load(
   "/textures/bricks/roughness.jpg"
 );
 
+// Bushes
+const bushesColorTexture = textureLoader.load("/textures/bushes/color.jpg");
+const bushesAmbientOcclusionTexture = textureLoader.load(
+  "/textures/bushes/ambientOcclusion.jpg"
+);
+const bushesHeightTexture = textureLoader.load("/textures/door/height.jpg");
+const bushesNormalTexture = textureLoader.load("/textures/bushes/normal.jpg");
+const bushesRoughnessTexture = textureLoader.load(
+  "/textures/bushes/roughness.jpg"
+);
+
+// Graves
+const gravesColorTexture = textureLoader.load("/textures/graves/color.jpg");
+const gravesAmbientOcclusionTexture = textureLoader.load(
+  "/textures/graves/ambientOcclusion.jpg"
+);
+const gravesDisplacementTexture = textureLoader.load(
+  "/textures/graves/displacement.jpg"
+);
+const gravesNormalTexture = textureLoader.load("/textures/graves/normal.jpg");
+const gravesRoughnessTexture = textureLoader.load(
+  "/textures/graves/roughness.jpg"
+);
+
+// Grass
 const grassColorTexture = textureLoader.load("/textures/grass/color.jpg");
 const grassAmbientOcclusionTexture = textureLoader.load(
   "/textures/grass/ambientOcclusion.jpg"
@@ -130,7 +157,13 @@ house.add(door);
 
 // Bushes
 const bushGeometry = new THREE.SphereGeometry(1, 16, 16);
-const bushMaterial = new THREE.MeshStandardMaterial({ color: "#89c854" });
+const bushMaterial = new THREE.MeshStandardMaterial({
+  map: bushesColorTexture,
+  aoMap: bushesAmbientOcclusionTexture,
+  normalMap: bushesNormalTexture,
+  roughnessMap: bushesRoughnessTexture,
+  heightMap: bushesHeightTexture,
+});
 
 const bush1 = new THREE.Mesh(bushGeometry, bushMaterial);
 bush1.scale.set(0.5, 0.5, 0.5);
@@ -155,7 +188,13 @@ const graves = new THREE.Group();
 scene.add(graves);
 
 const graveGeometry = new THREE.BoxGeometry(0.6, 0.8, 0.2);
-const graveMaterial = new THREE.MeshStandardMaterial({ color: "#b2b6b1" });
+const graveMaterial = new THREE.MeshStandardMaterial({
+  map: gravesColorTexture,
+  aoMap: gravesAmbientOcclusionTexture,
+  displacementMap: gravesDisplacementTexture,
+  normalMap: gravesNormalTexture,
+  roughnessMap: gravesRoughnessTexture,
+});
 
 for (let i = 0; i < 50; i++) {
   const angle = Math.random() * Math.PI * 2;
