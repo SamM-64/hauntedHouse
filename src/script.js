@@ -47,6 +47,15 @@ const bricksRoughnessTexture = textureLoader.load(
   "/textures/bricks/roughness.jpg"
 );
 
+// Roof
+const roofColorTexture = textureLoader.load("/textures/roof/color.jpg");
+const roofAmbientOcclusionTexture = textureLoader.load(
+  "/textures/roof/ambientOcclusion.jpg"
+);
+const roofHeightTexture = textureLoader.load("/textures/roof/height.jpg");
+const roofNormalTexture = textureLoader.load("/textures/roof/normal.jpg");
+const roofRoughnessTexture = textureLoader.load("/textures/roof/roughness.jpg");
+
 // Bushes
 const bushesColorTexture = textureLoader.load("/textures/bushes/color.jpg");
 const bushesAmbientOcclusionTexture = textureLoader.load(
@@ -126,7 +135,13 @@ house.add(walls);
 // Roof
 const roof = new THREE.Mesh(
   new THREE.ConeGeometry(3.5, 1, 4),
-  new THREE.MeshStandardMaterial({ color: "#b35f45" })
+  new THREE.MeshStandardMaterial({
+    map: roofColorTexture,
+    aoMap: roofAmbientOcclusionTexture,
+    normalMap: roofNormalTexture,
+    roughnessMap: roofRoughnessTexture,
+    heightMap: roofHeightTexture,
+  })
 );
 roof.position.y = 2.5 + 0.5;
 roof.rotation.y = Math.PI * 0.25;
