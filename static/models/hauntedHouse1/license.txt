@@ -1,0 +1,11 @@
+Model Information:
+* title:	Haunted House || Challenge
+* source:	https://sketchfab.com/3d-models/haunted-house-challenge-da25deadbba24e85a135573b3995dae2
+* author:	Ikki_3d (https://sketchfab.com/ikki_3d)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Haunted House || Challenge" (https://sketchfab.com/3d-models/haunted-house-challenge-da25deadbba24e85a135573b3995dae2) by Ikki_3d (https://sketchfab.com/ikki_3d) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Haunted house
+* source:	https://sketchfab.com/3d-models/haunted-house-ba7d554fdea5441c9fb2dcb117154882
+* author:	vinessensungaralingum (https://sketchfab.com/vinessensungaralingum)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Haunted house" (https://sketchfab.com/3d-models/haunted-house-ba7d554fdea5441c9fb2dcb117154882) by vinessensungaralingum (https://sketchfab.com/vinessensungaralingum) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
