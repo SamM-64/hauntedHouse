@@ -1,0 +1,11 @@
+Model Information:
+* title:	Spooky Skeleton Dance 1
+* source:	https://sketchfab.com/3d-models/spooky-skeleton-dance-1-1649416a836248229d641eb076cb5017
+* author:	zackw (https://sketchfab.com/zackw)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Spooky Skeleton Dance 1" (https://sketchfab.com/3d-models/spooky-skeleton-dance-1-1649416a836248229d641eb076cb5017) by zackw (https://sketchfab.com/zackw) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

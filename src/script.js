@@ -44,18 +44,7 @@ gltfLoader.load("/models/hauntedHouse4/scene.gltf", (gltf) => {
     scene.add(gltf.scene);
   }
 });
-gltfLoader.load("/animate/wolf_with_animations/scene.gltf", (gltf) => {
-  {
-    mixer = new THREE.AnimationMixer(gltf.scene);
-    const action = mixer.clipAction(gltf.animations[3]);
 
-    action.play();
-    gltf.scene.rotateY(1.5, 1, 1.5);
-    gltf.scene.position.set(2, 0.75, 3);
-    gltf.scene.scale.set(0.8, 2, 0.8);
-    scene.add(gltf.scene);
-  }
-});
 gltfLoader.load("/animate/ghost1/scene.gltf", (gltf) => {
   {
     gltf.scene.position.set(-2, 4.2, -2);
@@ -71,18 +60,41 @@ gltfLoader.load("/animate/moon/scene.gltf", (gltf) => {
   }
 });
 
-gltfLoader.load("/animate/zombie/scene.gltf", (gltf) => {
+gltfLoader.load("/animate/skeleton/scene.gltf", (gltf) => {
   {
     mixer = new THREE.AnimationMixer(gltf.scene);
     const action = mixer.clipAction(gltf.animations[0]);
 
     action.play();
-    gltf.scene.rotateY(1.5, 1, 1.5);
-    gltf.scene.position.set(-6.5, -0.6, 1);
-    gltf.scene.scale.set(1, 1, 1);
+    gltf.scene.rotateY(1.2, 1, 1.5);
+    gltf.scene.position.set(-6, -0.6, 1.5);
+    gltf.scene.scale.set(0.3, 0.3, 0.3);
     scene.add(gltf.scene);
   }
 });
+gltfLoader.load("/animate/skeleton2/scene.gltf", (gltf) => {
+  {
+    mixer = new THREE.AnimationMixer(gltf.scene);
+    const action = mixer.clipAction(gltf.animations[0]);
+
+    action.play();
+    gltf.scene.position.set(2, -0.6, 3);
+    gltf.scene.scale.set(0.25, 0.25, 0.25);
+    scene.add(gltf.scene);
+  }
+});
+// gltfLoader.load("/animate/wolf_with_animations/scene.gltf", (gltf) => {
+//   {
+//     mixer = new THREE.AnimationMixer(gltf.scene);
+//     const action = mixer.clipAction(gltf.animations[3]);
+
+//     action.play();
+//     gltf.scene.rotateY(1.5, 1, 1.5);
+//     gltf.scene.position.set(2, 0.75, 3);
+//     gltf.scene.scale.set(0.8, 2, 0.8);
+//     scene.add(gltf.scene);
+//   }
+// });
 
 //Fog
 const fog = new THREE.Fog("#262837", 1, 15);
