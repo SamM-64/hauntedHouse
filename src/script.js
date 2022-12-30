@@ -69,18 +69,19 @@ gltfLoader.load("/animate/skeleton/scene.gltf", (gltf) => {
     action.play();
     gltf.scene.rotateY(1.2, 1, 1.5);
     gltf.scene.position.set(-7, -0.3, 0.3);
-    gltf.scene.scale.set(0.3, 0.3, 0.3);
+    gltf.scene.scale.set(0.25, 0.25, 0.25);
     scene.add(gltf.scene);
   }
 });
-gltfLoader.load("/animate/skeleton2/scene.gltf", (gltf) => {
+gltfLoader.load("/animate/wolf_with_animations/scene.gltf", (gltf) => {
   {
     mixer = new THREE.AnimationMixer(gltf.scene);
-    const action = mixer.clipAction(gltf.animations[0]);
+    const action = mixer.clipAction(gltf.animations[3]);
 
     action.play();
-    gltf.scene.position.set(2, -0.6, 3);
-    gltf.scene.scale.set(0.25, 0.25, 0.25);
+    gltf.scene.rotateY(1.2, 1, 1.5);
+    gltf.scene.position.set(2, 0.4, 3);
+    gltf.scene.scale.set(1.5, 1.5, 1.5);
     scene.add(gltf.scene);
   }
 });
@@ -110,8 +111,8 @@ const ambientLight = new THREE.AmbientLight("#b9d5ff", 1, 3);
 scene.add(ambientLight);
 
 // Directional light
-const moonLight = new THREE.DirectionalLight("#b9d5ff", 0.5, 3);
-moonLight.position.set(4, 4, -5);
+const moonLight = new THREE.DirectionalLight("#0xfffff", 1);
+moonLight.position.set(0, 1, 0);
 scene.add(moonLight);
 
 // Door
