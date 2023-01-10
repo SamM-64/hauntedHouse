@@ -61,15 +61,15 @@ gltfLoader.load("/animate/moon/scene.gltf", (gltf) => {
 });
 
 let mixer2 = null;
-gltfLoader.load("/animate/skeleton/scene.gltf", (gltf) => {
+gltfLoader.load("/animate/zombie/scene.gltf", (gltf) => {
   {
     mixer2 = new THREE.AnimationMixer(gltf.scene);
     const action = mixer2.clipAction(gltf.animations[0]);
 
     action.play();
     gltf.scene.rotateY(1.2, 1, 1.5);
-    gltf.scene.position.set(-7, -0.3, 0.3);
-    gltf.scene.scale.set(0.25, 0.25, 0.25);
+    gltf.scene.position.set(-7, -0.6, 0.5);
+    gltf.scene.scale.set(0.9, 0.9, 0.9);
     scene.add(gltf.scene);
   }
 });
